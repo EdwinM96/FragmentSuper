@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static android.content.Intent.getIntent;
+
 /**
  * Created by rafaj on 8/4/2018.
  */
@@ -24,16 +26,15 @@ public class FragmentViewer extends Fragment {
 
         text = view.findViewById(R.id.textId);
         imagen = view.findViewById(R.id.imageId);
-        Intent callintgintent = this.get;
-        Bundle bundle = this.getArguments();
+        
 
 
-        if(bundle != null){
+        /*if(bundle != null){
             Toast.makeText(getActivity(), "Item: " + bundle.getString("KEY"), Toast.LENGTH_SHORT).show();
 
             text.setText(bundle.getString("KEY"));
 
-        }
+        }*/
 
         return view;
     }

@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+
 /**
  * Created by rafaj on 8/4/2018.
  */
@@ -41,15 +42,16 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         //Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
-
+        //Para la vista vertical, creamos el bundle con un objeto persona, lo mandamos por medio de un intent.
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             Intent newIntent = new Intent(getActivity().getApplicationContext(), Main2Activity.class);
             Resources res = getResources();
             String [] edad = res.getStringArray(R.array.Edades);
-            String [] imagen = res.getStringArray(R.array.Planets);
+            String [] imagen = res.getStringArray(R.array.imagenes);
+            int imagenPersona = getResources().getIdentifier(imagen[i], "drawable", getActivity().getPackageName());
             Persona persona = new Persona(adapterView.getItemAtPosition(i).toString(),edad[i],imagen[i]);
             Bundle bundle = new Bundle();
-            bundle.putSerializable("Lolazo",persona);
+            bundle.putSerializable("lolazo",persona);
             newIntent.putExtras(bundle);
             startActivity(newIntent);
         }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){

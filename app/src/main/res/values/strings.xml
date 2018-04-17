@@ -28,4 +28,12 @@
         <item>18</item>
         <item>17</item>
     </string-array>
+    <string-array name="imagenes">
+        <item>R.drawable.ahri_cosplay</item>
+        <item>R.drawable.kaisa_splash</item>
+        <item>R.drawable.missfortune_splash</item>
+        <item>R.drawable.orianna_splash</item>
+        <item>R.drawable.rengar_splash</item>
+        <item>R.drawable.sona_splash</item>
+    </string-array>
 </resources>

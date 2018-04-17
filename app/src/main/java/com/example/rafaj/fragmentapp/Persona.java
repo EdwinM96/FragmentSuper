@@ -5,12 +5,17 @@ import java.io.Serializable;
 public class Persona implements Serializable {
     private String nombre;
     private String edad;
-    private int imagen;
+    private String imagen;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String edad, int imagen) {
+    public Persona(String nombre, String edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public Persona(String nombre, String edad, String imagen) {
         this.nombre = nombre;
         this.edad = edad;
         this.imagen = imagen;
@@ -32,11 +37,11 @@ public class Persona implements Serializable {
         this.edad = edad;
     }
 
-    public int getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(int imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 }
