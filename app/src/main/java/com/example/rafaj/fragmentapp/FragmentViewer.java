@@ -19,14 +19,23 @@ import static android.content.Intent.getIntent;
 public class FragmentViewer extends Fragment {
     TextView text;
     ImageView imagen;
-
+    TextView text2;
+    Persona persona;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.viewer_fragment, container, false);
 
         text = view.findViewById(R.id.textId);
+        text2 = view.findViewById(R.id.textId2);
         imagen = view.findViewById(R.id.imageId);
-        
+        persona = (Persona)getArguments().getSerializable("lolazo");
+
+        if(persona != null){
+            text.setText(persona.getNombre());
+            text2.setText(persona.getEdad());
+            setImagen(persona.getImagen());
+        }
+
 
 
         /*if(bundle != null){
@@ -39,5 +48,29 @@ public class FragmentViewer extends Fragment {
         return view;
     }
 
+    public void setImagen(String i){
+        if (i.equals("0")){
+        imagen.setImageResource(R.drawable.ahri_cosplay);
+        }
+        if(i.equals("1")){
+        imagen.setImageResource(R.drawable.braum_splash);
+        }
+        if(i.equals("2")){
+        imagen.setImageResource(R.drawable.kaisa_splash);
+        }
+        if(i.equals("3")){
+        imagen.setImageResource(R.drawable.missfortune_splash);
+        }
+        if(i.equals("4")){
+        imagen.setImageResource(R.drawable.orianna_splash);
+        }
+        if(i.equals("5")){
+        imagen.setImageResource(R.drawable.rengar_splash);
+        }
+        if(i.equals("6")){
+        imagen.setImageResource(R.drawable.sona_splash);
+        }
+
+    }
 
 }

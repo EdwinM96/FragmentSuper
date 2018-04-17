@@ -38,6 +38,7 @@ public class Persona implements Serializable {
     }
 
     public String getImagen() {
+
         return imagen;
     }
 

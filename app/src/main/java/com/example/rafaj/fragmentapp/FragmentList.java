@@ -47,18 +47,21 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
             Intent newIntent = new Intent(getActivity().getApplicationContext(), Main2Activity.class);
             Resources res = getResources();
             String [] edad = res.getStringArray(R.array.Edades);
-            String [] imagen = res.getStringArray(R.array.imagenes);
-            int imagenPersona = getResources().getIdentifier(imagen[i], "drawable", getActivity().getPackageName());
-            Persona persona = new Persona(adapterView.getItemAtPosition(i).toString(),edad[i],imagen[i]);
+            //String [] imagen = res.getStringArray(R.array.imagenes);
+            //int imagenPersona = getResources().getIdentifier(imagen[i], "drawable", getActivity().getPackageName());
+            Persona persona = new Persona(adapterView.getItemAtPosition(i).toString(),edad[i],Integer.toString(i));
             Bundle bundle = new Bundle();
             bundle.putSerializable("lolazo",persona);
             newIntent.putExtras(bundle);
             startActivity(newIntent);
         }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
-
+            Resources res = getResources();
+            String [] edad = res.getStringArray(R.array.Edades);
+            //String [] imagen = res.getStringArray(R.array.imagenes);
+            Persona persona = new Persona(adapterView.getItemAtPosition(i).toString(),edad[i],Integer.toString(i));
             Bundle bundle = new Bundle();
-            bundle.putString("KEY", adapterView.getItemAtPosition(i).toString());
+            bundle.putSerializable("lolazo", persona);
             FragmentViewer frag = new FragmentViewer();
             frag.setArguments(bundle);
 

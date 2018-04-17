@@ -30,18 +30,40 @@ public class Main2Activity extends AppCompatActivity {
         Bundle bundle = callingIntent.getExtras();
 
         Persona persona = (Persona)bundle.getSerializable("lolazo");
-        res = getResources();
-        Context context = this.getBaseContext();
-        imagen = getResources().getIdentifier(persona.getImagen(), "drawable", getPackageName());
+        //res = getResources();
+        //Context context = this.getBaseContext();
+        //imagen = getResources().getIdentifier(persona.getImagen(), "drawable", getPackageName());
         //TypedArray icons = res.obtainTypeArray(R.array.)
-       // Drawable imagenPersona = context.getResources().getDrawable(imagen);
-        image.setImageResource(imagen);
+         // Drawable imagenPersona = context.getResources().getDrawable(imagen);
+        setImagen(persona.getImagen());
         text.setText(persona.getNombre());
         text2.setText(persona.getEdad());
 
 
 
     }
+    public void setImagen(String i){
+        if (i.equals("0")){
+        image.setImageResource(R.drawable.ahri_cosplay);
+        }
+        if(i.equals("1")){
+        image.setImageResource(R.drawable.braum_splash);
+        }
+        if(i.equals("2")){
+        image.setImageResource(R.drawable.kaisa_splash);
+        }
+        if(i.equals("3")){
+        image.setImageResource(R.drawable.missfortune_splash);
+        }
+        if(i.equals("4")){
+        image.setImageResource(R.drawable.orianna_splash);
+        }
+        if(i.equals("5")){
+        image.setImageResource(R.drawable.rengar_splash);
+        }
+        if(i.equals("6")){
+        image.setImageResource(R.drawable.sona_splash);
+        }
 
-
+}
 }
